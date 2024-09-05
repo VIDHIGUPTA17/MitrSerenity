@@ -5,6 +5,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:vihaan_hack/welcomescreen.dart';
@@ -38,7 +39,7 @@ class _PredictionState extends State<Prediction> {
 // print(response)
 print(response.body);
 print(response.statusCode);
-print("kjhgfd");
+// print("kjhgfd");
     if (response.statusCode == 200) {
 
       var x = jsonDecode(response.body);
@@ -67,7 +68,7 @@ print("kjhgfd");
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Smart Stress Prediction'),
+        title: Text('Smart Stress Prediction'.tr),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 206, 255, 223),
       ),
@@ -77,8 +78,18 @@ print("kjhgfd");
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextFieldComponent(width: width, controller: temperature, hintText: 'enter temperature', FieldName: 'Temperature (centigrade)', type: TextInputType.number, necessaryField: false),
-                            TextFieldComponent(width: width, controller: step_cnt, hintText: 'enter Step count', FieldName: 'Step count (last 10 min)', type: TextInputType.number, necessaryField: false),
+              TextFieldComponent(width: width, controller: temperature, hintText: 'enter temperature'.tr, FieldName: 'Temperature (centigrade)'.tr, type: TextInputType.number, necessaryField: false,   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter temperature';
+                    }
+                    return null;
+                  },),
+                            TextFieldComponent(width: width, controller: step_cnt, hintText: 'enter Step count'.tr, FieldName: 'Step count (last 10 min)'.tr, type: TextInputType.number, necessaryField: false,   validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your  step count';
+                    }
+                    return null;
+                  },),
 
               // TextsField("Temperature (centigrade)", '', temperature, false),
               // TextsField("Step count (last 10 min)", '', step_cnt, false),
@@ -97,10 +108,10 @@ print("kjhgfd");
                                 ? 0.6
                                 : 0.9,
                         center: z == 0
-                            ? Text('Low Stress')
+                            ? Text('Low Stress'.tr)
                             : z == 1
-                                ? Text('Normal Stress')
-                                : Text('High Stress'),
+                                ? Text('Normal Stress'.tr)
+                                : Text('High Stress'.tr),
                         circularStrokeCap: CircularStrokeCap.round,
                         progressColor: z == 0
                             ? Colors.green
@@ -141,7 +152,7 @@ print("kjhgfd");
   }
                       },
                       child: Text(
-                        'Predict',
+                        'Predict'.tr,
                         style: TextStyle(color: Colors.white, fontSize: 20.00),
                       )),
                 ),

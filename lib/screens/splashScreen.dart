@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:vihaan_hack/Homescreen.dart';
 import 'package:vihaan_hack/components/coustom_button.dart';
 import 'package:vihaan_hack/components/splash_slider.dart';
 import 'package:vihaan_hack/constants/constant.dart';
@@ -37,26 +35,26 @@ class SplashScreen extends StatelessWidget {
                     const SizedBox(
                       height: 50,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) =>  Homescreen(),
-                            ));
-                      },
-                      child: SizedBox(
-                        height: 60,
-                        width: 60,
-                        child: Text(
-                          "Skip",
-                          style: GoogleFonts.dmSans(
-                              color: Colors.green.shade700,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //           builder: (context) =>  Homescreen(),
+                    //         ));
+                    //   },
+                    //   child: SizedBox(
+                    //     height: 60,
+                    //     width: 60,
+                    //     child: Text(
+                    //       "Skip",
+                    //       style: GoogleFonts.dmSans(
+                    //           color: Colors.green.shade700,
+                    //           fontSize: 18,
+                    //           fontWeight: FontWeight.bold),
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
                 Container(

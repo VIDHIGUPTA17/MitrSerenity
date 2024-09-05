@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:vihaan_hack/Community.dart';
 import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
@@ -36,7 +37,7 @@ class _Homescreen1State extends State<Homescreen1> {
         title: Row(
           children: [CircleAvatar(backgroundColor: Colors.blueAccent,backgroundImage: AssetImage('assest/Ellipse 2.png'),),
           SizedBox(width: 2,),
-          Text('MitrSerenity'),
+          Text('SahaYog'.tr),
           Image.asset('assest/image_7-removebg-preview.png',scale: 10,)
           ,Spacer(),Icon(Icons.notifications)],
         ),
@@ -60,11 +61,11 @@ class _Homescreen1State extends State<Homescreen1> {
           child: Column(
             children: [
               Container(
-                child: Text("Welcome back, Sarina!",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
+                child: Text("Welcome to SahaYog".tr,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w600),),
               ),
               SizedBox(height: 10,),
                 Container(
-                child: Text("How are you feeling today ?",style: TextStyle(fontSize: 10)),
+                child: Text("How are you feeling today ?".tr,style: TextStyle(fontSize: 10)),
               ),
                 SizedBox(height: 10,),
                 Container(
@@ -113,7 +114,7 @@ Container(child:
   children: [
     Row(
       children: [
-        Text("“It is better to conquer yourself”",style: TextStyle(fontSize: 10, ),),
+        Text("“It is better to conquer yourself”".tr,style: TextStyle(fontSize: 10, ),),
       ],
     ),
     InkWell(child: Image.asset('assest/Girl waiting.png',),onTap: () => 
@@ -160,14 +161,14 @@ void _showHappyFaceDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Let's explore more about you!"),
-          content: Text("This is a dialog to explore more about you."),
+          title: Text("HAPPY !!!"),
+          content: Text("Feeling Happy "),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("OK"),
+              child: Text("OK".tr),
             ),
           ],
         );
@@ -211,7 +212,7 @@ class _MenuState extends State<Menu> {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      'Home',
+                      'Home'.tr,
                       textScaleFactor: 1,
                       style: TextStyle(fontSize: 25, color: color),
                     ),
@@ -238,7 +239,7 @@ class _MenuState extends State<Menu> {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      'Self Assesment',
+                      'Self Assesment'.tr,
                       textScaleFactor: 1,
                       style: TextStyle(fontSize: 25, color: color),
                     ),
@@ -285,7 +286,7 @@ class _MenuState extends State<Menu> {
                     ),
                     SizedBox(width: 10),
                     Text(
-                      'Helpline',
+                      'Helpline'.tr,
                       textScaleFactor: 1,
                       style: TextStyle(fontSize: 25, color: color),
                     ),
@@ -310,7 +311,7 @@ class _MenuState extends State<Menu> {
                     ),
                     SizedBox(width: 15),
                     Text(
-                      'Smart Prediction',
+                      'Smart Prediction'.tr,
                       textScaleFactor: 1,
                       style: TextStyle(fontSize: 25, color: color),
                     ),

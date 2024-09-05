@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:vihaan_hack/Community.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
 import 'package:vihaan_hack/screens/consellinghomeside.dart';
@@ -84,28 +84,33 @@ class _HomescreenState extends State<consellingnavbar> {
       controller: _controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
-      confineInSafeArea: true,
+      confineToSafeArea: true,
       backgroundColor: Color.fromARGB(255, 251, 255, 252),
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows: true,
+      hideNavigationBarWhenKeyboardAppears: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: ItemAnimationProperties(
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: ScreenTransitionAnimation(
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
-      navBarStyle: NavBarStyle.style1,
+        popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
+      // popActionScreens: PopActionScreensType.all,
+       animationSettings: const NavBarAnimationSettings(
+            navBarItemAnimation: ItemAnimationSettings( // Navigation Bar's items animation properties.
+                duration: Duration(milliseconds: 400),
+                curve: Curves.ease,
+            ),
+       screenTransitionAnimation: ScreenTransitionAnimationSettings( // Screen transition animation on change of selected tab.
+                animateTabTransition: true,
+                duration: Duration(milliseconds: 200),
+                screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
+            ),
+     
+    ),
+    // navBarHeight: kBottomNavigationBarHeight,
+
+     navBarStyle: NavBarStyle.style1,
     );
   }
 }

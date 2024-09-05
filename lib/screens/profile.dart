@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vihaan_hack/article.dart';
 import 'package:vihaan_hack/login.dart';
 import 'package:vihaan_hack/main.dart';
-import 'package:vihaan_hack/screens/age.dart';
 import 'package:vihaan_hack/screens/book_now.dart';
-import 'package:vihaan_hack/screens/gender.dart';
 import 'package:vihaan_hack/screens/language.dart';
 import 'package:vihaan_hack/widget/coustem_text.dart';
 import 'package:vihaan_hack/widget/setting.dart';
+
 
 class profile1 extends StatefulWidget {
   const profile1({super.key});
@@ -78,7 +77,7 @@ class _profile1State extends State<profile1> {
                 width: screenWidth * 0.29,
               ),
               CustomText(
-                text: 'Profile',
+                text: 'Profile'.tr,
                 fontStyle: null,
                 color: Color(0xFF00184A),
                 fontSize: 22,
@@ -110,14 +109,14 @@ class _profile1State extends State<profile1> {
             fontSize: 14,
           ),
           settingBox(
-              'assets/Vector (28).png', 'Personal Info', context, BookNow()),
+              'assets/Vector (28).png', 'Personal Info'.tr, context, BookNow()),
           settingBox(
-              'assets/Vector (28).png', 'Progress Report', context, profile1()),
+              'assets/Vector (28).png', 'Progress Report'.tr, context, profile1()),
           settingBox(
-              'assets/Vector (28).png', 'Active Cases', context, profile1()),
-          settingBox('assets/Vector (28).png', 'Language', context, Language()),
+              'assets/Vector (28).png', 'Active Cases'.tr, context, profile1()),
+          settingBox('assets/Vector (28).png', 'Language'.tr, context, Language()),
           settingBox(
-              'assets/Vector (28).png', 'Latest articles', context, Articles()),
+              'assets/Vector (28).png', 'Latest articles'.tr, context, Articles()),
           Padding(
               padding: const EdgeInsets.all(12.0),
               child: GestureDetector(
@@ -136,7 +135,7 @@ class _profile1State extends State<profile1> {
                     ),
                     SizedBox(width: screenWidth * 0.1),
                     Text(
-                      'Logout',
+                      'Logout'.tr,
                       style: TextStyle(
                         color: Color(0xFF212121),
                         fontSize: 18.37,

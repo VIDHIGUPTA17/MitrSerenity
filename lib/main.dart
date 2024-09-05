@@ -1,8 +1,11 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:health/health.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vihaan_hack/Homescreen.dart';
+import 'package:vihaan_hack/language/local_String.dart';
 import 'package:vihaan_hack/login.dart';
 import 'package:vihaan_hack/screens/age.dart';
 import 'package:vihaan_hack/screens/blinkscreen.dart';
@@ -33,9 +36,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      translations: LocalString(),
+      locale: Locale('en','US'),
       debugShowCheckedModeBanner: false,
       initialRoute: 'blinkscreen',
+      // home: WelcomeScreen(),
       // initialRoute: 'subject_wise_attendance',
       routes: {
         'splashscreen': (context) => SplashScreen(),
@@ -49,9 +55,10 @@ class MyApp extends StatelessWidget {
         'Welcome': (context) => WelcomeScreen(),
         'login': (context) => LoginScreens(),
         'predic': (context) => Prediction(),
-         'language': (context) => Language(),
-                  'consellinghomeside': (context) => ConsellingHomescreen(),
+        'language': (context) => Language(),
+        'consellinghomeside': (context) => ConsellingHomescreen(),
                                     'consellingnavbar': (context) => consellingnavbar(),
+            'homepage': (context) => Homescreen(),                          
 
 
         // 'userscreen': (context) => UserData(),

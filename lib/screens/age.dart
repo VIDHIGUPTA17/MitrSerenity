@@ -52,6 +52,7 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vihaan_hack/components/coustom_button.dart';
 
 class Age extends StatefulWidget {
@@ -82,7 +83,7 @@ class _AgeState extends State<Age> {
                   height: 60,
                 ),
                 Text(
-                  'How Old Are You?',
+                  'How Old Are You?'.tr,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
@@ -154,7 +155,7 @@ class _AgeState extends State<Age> {
                 // Button to continue
                 CustomButton(
                   color: Colors.green.shade600,
-                  text: 'Continue',
+                  text: 'Continue'.tr,
                   textColor: Colors.brown,
                   function: () {
                     // Add your action when the button is pressed

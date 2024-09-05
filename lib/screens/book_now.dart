@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vihaan_hack/Homescreen.dart';
+import 'package:vihaan_hack/mainPage.dart';
 import 'package:vihaan_hack/screens/congratulation.dart';
+
 
 class BookNow extends StatefulWidget {
   const BookNow({Key? key}) : super(key: key);
@@ -23,12 +25,14 @@ class _BookNowState extends State<BookNow> {
       backgroundColor: const Color.fromARGB(255, 218, 255, 219),
       appBar: AppBar(
         backgroundColor: Colors.green.shade600,
-        leading: Icon(
-          CupertinoIcons.arrow_left,
-          color: Colors.brown,
-        ),
-        title: const Text(
-          "Book Now",
+        leading:  IconButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> Homescreen1()));
+            },
+            icon: const Icon(Icons.arrow_back, color: Colors.brown),
+          ),
+        title:  Text(
+          "Book Now".tr,
           style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
         ),
@@ -37,10 +41,10 @@ class _BookNowState extends State<BookNow> {
             onPressed: () {},
             icon: const Icon(Icons.search, color: Colors.brown),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.more_vert, color: Colors.brown),
-          )
+          // IconButton(
+          //   onPressed: () {},
+          //   icon: Icon(Icons.more_vert, color: Colors.brown),
+          // )
         ],
       ),
       body: SafeArea(
@@ -50,8 +54,8 @@ class _BookNowState extends State<BookNow> {
             child: Column(
               children: [
                 SizedBox(height: sheight * 0.05),
-                const Text(
-                  "Help us find youthe right Expert!",
+                 Text(
+                  "Help us find youthe right Expert!".tr,
                   style: TextStyle(
                       color: Colors.brown,
                       fontWeight: FontWeight.bold,
@@ -75,10 +79,10 @@ class _BookNowState extends State<BookNow> {
                     'Relationship',
                     'Self Improvement',
                     'Sexual Wellness',
-                  ],
+                  ].map((item) => item.tr).toList(),
                 ),
                 Text(
-                  'So that we know what\'s troubling you',
+                  'So that we know what\'s troubling you'.tr,
                   style: TextStyle(fontSize: 15, color: Colors.brown),
                 ),
                 SizedBox(height: sheight * 0.06),
@@ -95,10 +99,10 @@ class _BookNowState extends State<BookNow> {
                     'Marital Adjustment Issues',
                     'Extra-Marital Relationship',
                     'Divorce/Separation',
-                  ],
+                  ].map((item) => item.tr).toList(),
                 ),
                 Text(
-                  'Could you tell us a little more',
+                  'Could you tell us a little more'.tr,
                   style: TextStyle(fontSize: 15, color: Colors.brown),
                 ),
                 SizedBox(height: sheight * 0.15),
@@ -117,7 +121,7 @@ class _BookNowState extends State<BookNow> {
                     );
                   },
                   child: Text(
-                    'Book Appointment',
+                    'Book Appointment'.tr,
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
@@ -165,8 +169,8 @@ class _BookNowState extends State<BookNow> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Congratulations!"),
-          content: Text("Your appointment has been booked successfully."),
+          title: Text("Congratulations!".tr),
+          content: Text("Your appointment has been booked successfully.".tr),
           actions: [
             TextButton(
               onPressed: () {
@@ -174,7 +178,7 @@ class _BookNowState extends State<BookNow> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Homescreen()));
               },
-              child: Text("OK"),
+              child: Text("OK".tr),
             ),
           ],
         );

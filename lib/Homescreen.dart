@@ -1,7 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:vihaan_hack/Community.dart';
 import 'package:vihaan_hack/screens/assesment.dart';
 import 'package:vihaan_hack/screens/helpline.dart';
@@ -29,25 +30,25 @@ class _HomescreenState extends State<Homescreen> {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home),
-        title: ("Home"),
+        title: ("Home".tr),
         activeColorPrimary: const Color.fromRGBO(83, 160, 110, 1),
         inactiveColorPrimary: Colors.grey,
       ),
          PersistentBottomNavBarItem(
         icon: Icon(Icons.video_call),
-        title: ("Video Call"),
+        title: ("Video Call".tr),
         activeColorPrimary: const Color.fromRGBO(83, 160, 110, 1),
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.chat_bubble),
-        title: ("Chat"),
+        title: ("Chat".tr),
         activeColorPrimary: const Color.fromRGBO(83, 160, 110, 1),
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.person),
-        title: ("Profile"),
+        title: ("Profile".tr),
         activeColorPrimary: const Color.fromRGBO(83, 160, 110, 1),
         inactiveColorPrimary: Colors.grey,
       ),
@@ -83,27 +84,29 @@ class _HomescreenState extends State<Homescreen> {
       controller: _controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
-      confineInSafeArea: true,
+      confineToSafeArea: true,
       backgroundColor: Color.fromARGB(255, 251, 255, 252),
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
       stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows: true,
+        hideNavigationBarWhenKeyboardAppears: true,
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.circular(10.0),
         colorBehindNavBar: Colors.white,
       ),
-      popAllScreensOnTapOfSelectedTab: true,
-      popActionScreens: PopActionScreensType.all,
-      itemAnimationProperties: ItemAnimationProperties(
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease,
-      ),
-      screenTransitionAnimation: ScreenTransitionAnimation(
-        animateTabTransition: true,
-        curve: Curves.ease,
-        duration: Duration(milliseconds: 200),
-      ),
+        popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
+      // popActionScreens: PopActionScreensType.all,
+      animationSettings: const NavBarAnimationSettings(
+            navBarItemAnimation: ItemAnimationSettings( // Navigation Bar's items animation properties.
+                duration: Duration(milliseconds: 400),
+                curve: Curves.ease,
+            ),
+            screenTransitionAnimation: ScreenTransitionAnimationSettings( // Screen transition animation on change of selected tab.
+                animateTabTransition: true,
+                duration: Duration(milliseconds: 200),
+                screenTransitionAnimationType: ScreenTransitionAnimationType.fadeIn,
+            ),
+        ),
       navBarStyle: NavBarStyle.style1,
     );
   }

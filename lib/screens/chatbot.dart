@@ -2,6 +2,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_gemini/google_gemini.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -59,7 +60,7 @@ class _MentalHealthChatBotState extends State<MentalHealthChatBot> {
                           children: [
                             Image.asset('assest/Girl waiting.png',scale: 2,),
                             Text(
-                              'MitrSerenity',
+                              'SahaYog'.tr,
                               style: TextStyle(
                                 color: Color(0xFF00184A),
                                 fontSize: 24,
@@ -70,7 +71,7 @@ class _MentalHealthChatBotState extends State<MentalHealthChatBot> {
                           ],
                         ),
                         Text(
-                          'Online',
+                          'Online'.tr,
                           style: TextStyle(
                             color: Color(0xFF616161),
                             fontSize: 14,
@@ -85,10 +86,10 @@ class _MentalHealthChatBotState extends State<MentalHealthChatBot> {
                 ),
               ),
               centerTitle: true,
-              bottom: const TabBar(
+              bottom:  TabBar(
                 tabs: [
-                  Tab(text: "Text Only",),
-                  Tab(text: "Text with Image"),
+                  Tab(text: "Text Only".tr,),
+                  Tab(text: "Text with Image".tr),
                 ],
               ),
             ),
@@ -138,7 +139,7 @@ class _TextOnlyState extends State<TextOnly> {
         // .generateFromText(
         .generateFromText('''
             
-hi lets play a roleplay you are the chatbot of my MitrSerenity mobile application which helps to improves the mental health & fitness   and will answer questions only related to mental & fitnessl issues and nothing else to avoid any kind of spam .if anyone asks any other question just reply  "only ask question related to Health & Fitness"
+hi lets play a roleplay you are the chatbot of my SahaYog .trmobile application which helps to improves the mental health & fitness   and will answer questions only related to mental & fitnessl issues and nothing else to avoid any kind of spam .if anyone asks any other question just reply  "only ask question related to Health & Fitness"
 , $query''')
 
         // "u will be very specific and personalized according to the  kind of cybercrime fraud happend with the user and will not be answering any else question related to any othher category , strictly u will answer in the speciific lang in which user will ask not any other question will be entertain by u$query")
@@ -147,7 +148,7 @@ hi lets play a roleplay you are the chatbot of my MitrSerenity mobile applicatio
       setState(() {
         loading = false;
         textChat.add({
-          "role": "MitrSerenity",
+          "role": "SahaYog".tr,
           "text": value.text,
         });
       });
@@ -156,7 +157,7 @@ hi lets play a roleplay you are the chatbot of my MitrSerenity mobile applicatio
       setState(() {
         loading = false;
         textChat.add({
-          "role": "MitrSerenity",
+          "role": "SahaYog".tr,
           "text": error.toString(),
         });
       });
@@ -278,14 +279,14 @@ class _TextWithImageState extends State<TextWithImage> {
       setState(() {
         loading = false;
         textAndImageChat
-            .add({"role": "MitrSerenity", "text": value.text, "image": ""});
+            .add({"role": "SahaYog".tr, "text": value.text, "image": ""});
       });
       scrollToTheEnd();
     }).onError((error, stackTrace) {
       setState(() {
         loading = false;
         textAndImageChat
-            .add({"role": "MitrSerenity", "text": error.toString(), "image": ""});
+            .add({"role": "SahaYog".tr, "text": error.toString(), "image": ""});
       });
       scrollToTheEnd();
     });

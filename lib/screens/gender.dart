@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vihaan_hack/components/coustom_button.dart';
-
 class gender extends StatefulWidget {
   const gender({super.key});
 
@@ -27,7 +26,7 @@ class _genderState extends State<gender> {
                           height: 60,
                         ),
                         Text(
-                          'What\'s your Gender?',
+                          'gender_title'.tr,
                           style: TextStyle(
                               fontSize: 26,
                               fontWeight: FontWeight.bold,
@@ -44,7 +43,7 @@ class _genderState extends State<gender> {
                           height: 20,
                         ),
                         Text(
-                          'Male',
+                          'Male'.tr,
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -61,7 +60,7 @@ class _genderState extends State<gender> {
                           height: 20,
                         ),
                         Text(
-                          'female',
+                          'female'.tr,
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -72,7 +71,7 @@ class _genderState extends State<gender> {
                         ),
                         CustomButton(
                           color: Colors.green.shade600,
-                          text: 'Continue',
+                          text: 'Continue'.tr,
                           textColor: Colors.brown,
                           function: () {},
                         )

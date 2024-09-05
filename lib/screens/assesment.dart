@@ -1,7 +1,9 @@
 // import 'package:caress/QuizPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:vihaan/quizpage.dart';
 import 'package:vihaan_hack/quizpage.dart';
+
 
 class Assessment extends StatefulWidget {
   const Assessment({Key? key}) : super(key: key);
@@ -68,7 +70,7 @@ class _AssessmentState extends State<Assessment> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(237,250,225,1),
       appBar: AppBar(
-        title: Text('Assessment Test'),
+        title: Text('Assessment Test'.tr), // Translate the app bar title
         centerTitle: true,
         backgroundColor:  const Color.fromRGBO(84, 205, 126, 1),
       ),
@@ -87,7 +89,7 @@ class _AssessmentState extends State<Assessment> {
               ),
               SizedBox(height: height / 40),
               Text(
-                'Choose self assesment test based on following disorders',
+                'Choose self assesment test based on following disorders'.tr, // Translate the instruction text
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 20,
@@ -98,7 +100,7 @@ class _AssessmentState extends State<Assessment> {
               SizedBox(height: height / 20),
               InkWell(
                 child: ListTile(
-                  title: Center(child: Text('Depression', style: style)),
+                  title: Center(child: Text('Depression'.tr, style: style)),
                   tileColor: Colors.grey[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -112,14 +114,14 @@ class _AssessmentState extends State<Assessment> {
                           builder: (context) => QuizPage(
                               depression,
                               8,
-                              'Depression',
+                              'Depression'.tr,
                               [Color.fromARGB(255, 33, 243, 100), const Color.fromARGB(255, 0, 112, 58)])));
                 },
               ),
               SizedBox(height: height / 60),
               InkWell(
                 child: ListTile(
-                  title: Center(child: Text('Anxiety', style: style)),
+                  title: Center(child: Text('Anxiety'.tr, style: style)),
                   tileColor: Colors.grey[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -140,7 +142,7 @@ class _AssessmentState extends State<Assessment> {
               SizedBox(height: height / 60),
               InkWell(
                 child: ListTile(
-                  title: Center(child: Text('PTSD', style: style)),
+                  title: Center(child: Text('PTSD'.tr, style: style)),
                   tileColor: Colors.grey[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -152,13 +154,13 @@ class _AssessmentState extends State<Assessment> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => QuizPage(
-                              pstd, 5, 'PTSD', [Color.fromARGB(255, 33, 243, 100), const Color.fromARGB(255, 0, 112, 58)])));
+                              pstd, 5, 'PTSD'.tr, [Color.fromARGB(255, 33, 243, 100), const Color.fromARGB(255, 0, 112, 58)])));
                 },
               ),
               SizedBox(height: height / 60),
               InkWell(
                 child: ListTile(
-                  title: Center(child: Text('Schizophrenia', style: style)),
+                  title: Center(child: Text('Schizophrenia'.tr, style: style)),
                   tileColor: Colors.grey[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -172,14 +174,14 @@ class _AssessmentState extends State<Assessment> {
                           builder: (context) => QuizPage(
                               schizophrenia,
                               8,
-                              'Schizophrenia',
+                              'Schizophrenia'.tr,
                               [Color.fromARGB(255, 33, 243, 100), const Color.fromARGB(255, 0, 112, 58)])));
                 },
               ),
               SizedBox(height: height / 60),
               InkWell(
                 child: ListTile(
-                  title: Center(child: Text('Addiction', style: style)),
+                  title: Center(child: Text('Addiction'.tr, style: style)),
                   tileColor: Colors.grey[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -191,7 +193,7 @@ class _AssessmentState extends State<Assessment> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => QuizPage(addiction, 6,
-                              'Addiction', [Color.fromARGB(255, 33, 243, 100), const Color.fromARGB(255, 0, 112, 58)])));
+                              'Addiction'.tr, [Color.fromARGB(255, 33, 243, 100), const Color.fromARGB(255, 0, 112, 58)])));
                 },
               ),
               SizedBox(height: height / 60),

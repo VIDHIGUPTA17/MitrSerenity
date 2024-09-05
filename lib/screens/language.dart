@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:vihaan_hack/Homescreen.dart';
+import 'package:get/get.dart';
+import 'package:vihaan_hack/mainPage.dart';
 
 import 'utils.dart';
 
@@ -24,13 +25,13 @@ class _LanguageState extends State<Language> {
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/background.png'),
+              image: AssetImage('assest/background.png'),
               fit: BoxFit.cover,
             ),
           ),
         ),
         Scaffold(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Color.fromARGB(255, 213, 255, 194),
             body: ListView(
               children: [buildheading(context)],
             )),
@@ -57,7 +58,7 @@ class _LanguageState extends State<Language> {
         SizedBox(height: screenHeight * 0.1),
         const CustomText1(
           text: "Choose Language",
-          color: const Color(0xFF245BC9),
+          color: Color.fromARGB(255, 0, 0, 0),
           fontSize: 24,
           fontStyle: null,
           fontfamily: '',
@@ -65,7 +66,7 @@ class _LanguageState extends State<Language> {
         SizedBox(height: screenHeight * 0.02),
         const CustomText1(
           text: "भाषा चुनिए",
-          color: Color(0xFF245BC9),
+          color: Color.fromARGB(255, 0, 0, 0),
           fontSize: 24,
           fontStyle: null,
           fontfamily: 'Poppins',
@@ -75,6 +76,7 @@ class _LanguageState extends State<Language> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+
                   CustomButton(
                   text1: 'Hindi - हिंदी', text2: 'ए', text3: 'hi', text4: 'IN'),
               // buttonchat2('Hindi - हिंदी', 'ए', 'hi', 'IN', context),
@@ -94,7 +96,7 @@ class _LanguageState extends State<Language> {
                   text1: 'English- English', text2: 'A', text3: 'en', text4: 'US'),
               // buttonchat2('kannada-தமிழ்', 'ஏ', '', '', context),
               CustomButton(
-                  text1: 'kannada-தமிழ்', text2: 'ஏ', text3: '', text4: ''),
+                  text1: 'kannada-தமிழ்', text2: 'ஏ', text3: 'kn', text4: 'IN'),
             ])),
         SizedBox(height: screenHeight * 0.06),
         Container(
@@ -108,7 +110,7 @@ class _LanguageState extends State<Language> {
                   text1: 'Tamil - தமிழ்', text2: 'ஏ', text3: 'hi', text4: 'IN'),
             ])),
         SizedBox(height: screenHeight * 0.04),
-        button3("Sign In", 40.0, 320.0, context, Homescreen()),
+      
       ],
     );
   }
@@ -119,6 +121,8 @@ class CustomButton extends StatefulWidget {
   final String text2;
   final String text3;
   final String text4;
+  final VoidCallback? onPressed;
+  
 
   const CustomButton({
     Key? key,
@@ -126,6 +130,7 @@ class CustomButton extends StatefulWidget {
     required this.text2,
     required this.text3,
     required this.text4,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -145,22 +150,25 @@ class _CustomButtonState extends State<CustomButton> {
         setState(() {
           isTapped = !isTapped;
         });
+         if (widget.onPressed != null) {
+          widget.onPressed!();
+        }
 
         var locale = Locale(widget.text3, widget.text4);
-        // Get.updateLocale(locale);
+        Get.updateLocale(locale);
 
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Homescreen1()));
       },
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(6)),
           border: Border.all(
-            color: Color(0xFF245BC9),
+            color: Colors.green,
             width: 2.0,
           ),
-          color: isTapped ? Colors.blue : Colors.transparent,
+          color: isTapped ? Colors.green : Colors.transparent,
         ),
-        height: screenHeight * 0.15,
+        // height: screenHeight * 0.15,
         width: screenWidth * 0.3,
         child: Column(
           children: [
@@ -168,7 +176,7 @@ class _CustomButtonState extends State<CustomButton> {
             Text(
               widget.text1,
               style: TextStyle(
-                color: isTapped ? Colors.white : Color(0xFF245BC9),
+                color: isTapped ? Colors.white : Colors.green,
                 fontSize: 14,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w500,
@@ -178,7 +186,7 @@ class _CustomButtonState extends State<CustomButton> {
             Text(
               widget.text2,
               style: TextStyle(
-                color: isTapped ? Colors.white : Color(0xFF245BC9),
+                color: isTapped ? Colors.white : Colors.green,
                 fontSize: 40,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w500,
